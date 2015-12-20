@@ -30,7 +30,7 @@ int main(int argc, char **argv){
 
 double simple_euler(double x0, double y0, double xf, long steps){
     double *x = (double *) malloc((size_t) (steps * sizeof(double)));
-    double *y = (double *) malloc(steps * sizeof(double));
+    double *y = (double *) malloc((size_t) (steps * sizeof(double)));
     if(!x)
         if(!y)
             fprintf(stderr, "Sorry there was some problem allocating memory for the program.");
