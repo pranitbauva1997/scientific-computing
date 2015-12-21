@@ -3,7 +3,7 @@
 double f_dash(double x, double y){
     double temp;
     // Apply some function in temp;
-    temp = 3*x*x/y/2;
+    temp = 3*x*x;
     return temp;
 }
 
