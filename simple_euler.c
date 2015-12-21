@@ -1,9 +1,9 @@
 #include<stdio.h>
 
-double f_dash(double x){
+double f_dash(double x, double y){
     double temp;
     // Apply some function in temp;
-    temp = 3*x*x;
+    temp = 3*x*x/y/2;
     return temp;
 }
 
@@ -44,7 +44,7 @@ double simple_euler(double x0, double y0, double xf, long steps){
         x[i] = i*h + x0;
 
     for(i = 1; i < steps; i++)
-        y[i] = y[i-1] + h * f_dash(x[i-1]);
+        y[i] = y[i-1] + h * f_dash(x[i-1], y[i-1]);
 
     return y[steps - 1];
 }
