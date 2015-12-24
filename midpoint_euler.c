@@ -7,9 +7,10 @@ double midpoint_euler(double x0, double y0, double xf, long steps){
     double *k1 = (double *) malloc((size_t) (steps * sizeof(double)));
     double *k2 = (double *) malloc((size_t) (steps * sizeof(double)));
     double *y = (double *) malloc((size_t) (steps * sizeof(double)));
-    if(!x)
-        if(!y)
-            fprintf(stderr, "Sorry there was some problem allocating memory for the program.");
+    if(!x && !y && !k1 && !k2){
+        fprintf(stderr, "Sorry there was some problem allocating memory for the program.");
+        exit(EXIT_FAILURE);
+    }
     x[0] = x0;
     x[steps] = xf;
     y[0] = y0;

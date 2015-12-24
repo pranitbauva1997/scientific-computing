@@ -9,9 +9,10 @@ double four_order_simple_rk(double x0, double y0, double xf, long steps){
     double *k3 = (double *) malloc((size_t) (steps * sizeof(double)));
     double *k4 = (double *) malloc((size_t) (steps * sizeof(double)));
     double *y = (double *) malloc((size_t) (steps * sizeof(double)));
-    if(!x)
-        if(!y)
-            fprintf(stderr, "Sorry there was some problem allocating memory for the program.");
+    if(!x && !y && !k1 && !k2 && !k3 && !k4){
+        fprintf(stderr, "Sorry there was some problem allocating memory for the program.");
+        exit(EXIT_FAILURE);
+    }
     x[0] = x0;
     x[steps] = xf;
     y[0] = y0;
