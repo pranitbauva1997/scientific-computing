@@ -25,5 +25,10 @@ double midpoint_euler(double x0, double y0, double xf, long steps){
         y[i] = y[i-1] + k2[i-1];
     }
 
-    return y[steps - 1];
+    double yf = y[steps - 1];
+    free(x);
+    free(k1);
+    free(k2);
+    free(y);
+    return yf;
 }

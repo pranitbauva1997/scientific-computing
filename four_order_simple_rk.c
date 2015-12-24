@@ -29,5 +29,12 @@ double four_order_simple_rk(double x0, double y0, double xf, long steps){
         y[i] = y[i-1] + k1[i-1]/6 + k2[i-1]/3 + k3[i-1]/3 + k4[i]/6;
     }
 
-    return y[steps - 1];
+    double yf = y[steps - 1];
+    free(x);
+    free(k1);
+    free(k2);
+    free(k3);
+    free(k4);
+    free(y);
+    return yf;
 }

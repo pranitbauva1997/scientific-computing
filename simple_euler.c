@@ -20,5 +20,8 @@ double simple_euler(double x0, double y0, double xf, long steps){
     for(i = 1; i < steps; i++)
         y[i] = y[i-1] + h * f_dash(x[i-1], y[i-1]);
 
-    return y[steps - 1];
+    double yf = y[steps - 1];
+    free(x);
+    free(y);
+    return yf;
 }
