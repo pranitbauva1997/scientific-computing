@@ -3,7 +3,7 @@ CC = gcc
 
 # Enable all compiler warnings
 CFLAGS = -Wall
-CFLAGS += -c
+CFLAGS += -c -g
 
 objects = simple_euler.o midpoint_euler.o main.o
 
