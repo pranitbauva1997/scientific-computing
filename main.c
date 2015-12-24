@@ -1,4 +1,5 @@
 #include<stdio.h>
+#include<stdlib.h>
 #include "ode.h"
 
 double f_dash(double x, double y){
@@ -23,9 +24,11 @@ int main(int argc, char **argv){
         return -1;
     }
     yf = simple_euler(x0, y0, xf, steps);
-    printf("The value of y at x (Simple Euler)= %lf is %lf\n", xf, yf);
+    printf("The value of y at x (Simple Euler) = %lf is %lf\n", xf, yf);
     yf = midpoint_euler(x0, y0, xf, steps);
     printf("The value of y at x (Mid Point Euler) = %lf is %lf\n", xf, yf);
+    yf = four_order_simple_rk(x0, y0, xf, steps);
+    printf("The value of y at x (4th Order RK (simple)) = %lf is %lf\n", xf, yf);
     return 0;
 }
 
