@@ -5,7 +5,7 @@ CC = gcc
 CFLAGS = -Wall
 CFLAGS += -c -g
 
-objects = simple_euler.o midpoint_euler.o four_order_simple_rk.o main.o
+objects = simple_euler.o midpoint_euler.o four_order_simple_rk.o modified_midpoint.o main.o
 
 all : main
 
@@ -24,6 +24,8 @@ midpoint_euler.o : midpoint_euler.c ode.h
 four_order_simple_rk.o : four_order_simple_rk.c ode.h
 	$(CC) $(CFLAGS) four_order_simple_rk.c
 
+modified_midpoint.o : modified_midpoint.c ode.h
+	$(CC) $(CFLAGS) modified_midpoint.c
 .PHONY : clean
 
 clean : 

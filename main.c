@@ -29,6 +29,8 @@ int main(int argc, char **argv){
     printf("The value of y at x (Mid Point Euler) = %lf is %lf\n", xf, yf);
     yf = four_order_simple_rk(x0, y0, xf, steps);
     printf("The value of y at x (4th Order RK (simple)) = %lf is %lf\n", xf, yf);
+    yf = modified_midpoint(x0, y0, xf, steps);
+    printf("The value of y at x (Modified Midpoint) = %lf is %lf\n", xf, yf);
     return 0;
 }
 
